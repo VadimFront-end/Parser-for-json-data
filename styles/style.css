@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#input {
+  font-size: 15px;
+  padding: 5px;
+}
+
+#edit {
+  position: fixed;
+  left:51%;
+  display: none;
+}
+
+#content {
+  position: relative;
+}
+
+#table {
+  cursor: pointer;
+  width: 50%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 1px 8px;
+  border:1px solid black;
+}
+
+.about {
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AcademyProject</title>
+    <link rel="stylesheet" 
+      type="text/css" 
+      href="./styles/style.css" 
+    />
+  </head>
+  <body>
+    <div id="content">
+      <div id="edit"><input id="input" type="text"><button onclick="edit()">Edit field</button></div>
+      <input
+        id="file" 
+        type="file" 
+        onchange="showFile(this)">
+      <table id="table">
+          <tr>
+            <td><div>firstName</div><button onclick="sort(0)">sort</button><button onclick="hide(0)">hide</button></td>
+            <td><div>lastName</div><button onclick="sort(1)">sort</button><button onclick="hide(1)">hide</button></td>
+            <td><div>about</div><button onclick="sort(2)">sort</button><button onclick="hide(2)">hide</button></td>
+            <td><div>eyeColor</div><button onclick="sort(3)">sort</button><button onclick="hide(3)">hide</button></td>
+          </tr>
+      </table>
+    </div>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
