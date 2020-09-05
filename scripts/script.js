@@ -13,6 +13,7 @@ function showFile(input) {
     };
 }
 
+//функция создания таблицы
 function createTable(person) {
     let newLine=document.createElement('tr');
     for(data in person) {
@@ -45,6 +46,7 @@ function createTable(person) {
     document.getElementById('table').appendChild(newLine);
 }
 
+//функция сортировки строк таблицы(по алфавиту)
 function sort(num) {
     let trArray=document.getElementById('table');
     let i=trArray.rows.length-1;
@@ -63,14 +65,17 @@ function sort(num) {
     document.getElementById('content').appendChild(newTable);
 }
 
+//функиция для скрытия выбранной колонки
 function hide(num) {
     let trArray=document.getElementById('table');
     for(let j=1;j<trArray.rows.length-1;j++)
         if(trArray.rows[j].cells[num].style.visibility==='hidden')trArray.rows[j].cells[num].style.visibility='visible';
         else trArray.rows[j].cells[num].style.visibility='hidden';
 }
+//переменные, в которые буду записывать координаты ячейки, на котрую кликнули
 let numCol=null;
 let numRow=null;
+//функция изменения ячейки, на которую кликнул пользователь
 function edit() {
     document.getElementById('table').rows[numRow].cells[numCol].innerHTML=document.getElementById('input').value;
     if(numCol===3)document.getElementById('table').rows[numRow].cells[numCol].style.backgroundColor=document.getElementById('input').value;
@@ -79,13 +84,13 @@ function edit() {
     document.getElementById('edit').style.display='none';
 }
 
+//функция для отследивания и определения ячейки при клике по таблице
 document.querySelector('table').onclick = (event) => {
   let cell = event.target;
   if (cell.tagName.toLowerCase() != 'td')
     return;
   let i = cell.parentNode.rowIndex;
   let j = cell.cellIndex;
-  console.log(i, j);
   numCol=j;
   numRow=i;
   document.getElementById('edit').style.display='block';
